@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Click Circles</title>
+
+
+
+	<style type="text/css">
+		.header{
+
+      height:100px;
+      background-color: #6699cc;
+       margin:0px;
+      top:0;
+      left:0;
+       color:#fff9f0;
+       position: fixed;
+      width: 100%;
+      z-index: 1000;
+      display:inline;
+      font-family: 'Open Sans', sans-serif;
+      text-align:left;
+        }
+
+    .header a{
+        text-decoration: none;
+        color:#fff9f0;
+          display:inline-flex;
+          margin-top: 40px;
+          margin-left: 40px;
+          margin-right: -10px;
+          font-family: 'Open Sans', sans-serif;
+
+
+
+      }
+
+      .header a:hover{
+        text-decoration-line: underline;
+        text-decoration-thickness: 2px;
+
+      }
+
+    .header .name{
+      margin-left: 1250px;
+    margin-top: -115px;
+      font-size: 20px;
+        font-family: 'Open Sans', sans-serif;
+
+    }
+
+    .logo {
+      margin-top: -108px;
+      
+      display: grid;
+        place-items: center;
+        text-align: center;
+
+    }
+    .logo img{
+      width: 200px;
+      height:200px;
+      
+    }
+		body{
+			text-align:center;
+			margin-top:140px;
+		}
+
+		.circle{
+			background-size:contain;
+			background-color:lightpink;
+			position:absolute;
+			background-repeat:no-repeat;
+			z-index:2;
+			width:100px;
+			height:100px;
+			border-radius: 100px;
+		}
+
+
+
+	</style>
+
+</head>
+<body>
+	<div class = "header">
+        
+        <a href="index.html#gallery" target="_blank">
+            <div class = "item">Back to Gallery</div>
+        </a>
+        <a href="clickinfo.html" target="_blank">
+            <div class = "item">Codesketch Tutorial</div>
+        </a>
+        
+    <div class= "logo"><img src = "logo.png"></div>
+    <div class= "name">Liv Sandberg</div>
+    </div>
+	<h1>Click around the page!</h1>
+
+
+
+	<script type="text/javascript">
+		document.addEventListener('click', function makeCircle(event){
+			var circle = document.createElement('div');
+			circle.classList.add("circle");
+			document.body.appendChild(circle);
+			circle.style.left = event.clientX - 45 + "px";
+			circle.style.top = event.clientY - 45 + "px";
+		});
+
+
+	</script>
+</body>
+</html>

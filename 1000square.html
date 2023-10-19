@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+
+<style type="text/css">
+.header{
+
+      height:18.3vh;
+      background-color: #6699cc;
+       margin:0px;
+      top:0;
+      left:0;
+       color:#fff9f0;
+       position: fixed;
+      width: 100%;
+      z-index: 1000;
+      display:inline;
+      font-family: 'Open Sans', sans-serif;
+      text-align:left;
+        }
+
+    .header a{
+        text-decoration: none;
+       color:#fff9f0;
+          display:inline-flex;
+          margin-top: 7.37vh;
+          margin-left: 3.8vw;
+          margin-right: -9.5px;
+          font-family: 'Open Sans', sans-serif;
+
+
+
+      }
+
+      .header a:hover{
+        text-decoration-line: underline;
+        text-decoration-thickness: 2px;
+
+      }
+
+    .header .name{
+      margin-left: 119vw;
+    margin-top: -21vh;
+      font-size: 1.25em;
+        font-family: 'Open Sans', sans-serif;
+
+    }
+
+    .logo {
+      margin-top: -19.8vh;
+      
+      display: grid;
+        place-items: center;
+        text-align: center;
+
+    }
+    .logo img{
+      width: 19vw;
+      height:36.7vh;
+      
+    }
+ 
+body{
+	background-color: lightblue;
+	color:white;
+	text-align: center;
+	margin-top: 25.7vh;
+}
+
+.square{
+	height:18.4vh;
+	width: 9.5vw;
+	display:inline-block;
+	margin:1.8vh;
+    background-color: lightpink;	
+}
+
+</style>
+
+</head>
+<body>
+<div class = "header">
+        
+        <a href="index.html#gallery" target="_blank">
+            <div class = "item">Back to Gallery</div>
+        </a>
+        <a href="1000squareinfo.html" target="_blank">
+            <div class = "item">Codesketch Tutorial</div>
+        </a>
+        
+    <div class= "logo"><img src = "logo.png"></div>
+    <div class= "name">Liv Sandberg</div>
+    </div>
+
+	
+
+<h1>1000 Squares!</h1>
+
+<div class="square"></div>
+
+
+
+
+
+<script type="text/javascript">
+	
+function makeSquare (){
+	var square =document.
+	createElement ("div");
+	square.classList.add('square');
+	document.body.appendChild(square);
+}
+
+for (var counter=0; counter<1001; 
+	counter=counter+1) {makeSquare()}
+</script>
+
+
+</body>
+</html>

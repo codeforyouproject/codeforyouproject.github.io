@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Background Color!</title>
+
+
+
+	<style type="text/css">
+
+		.header{
+
+      height:100px;
+      background-color: #6699cc;
+       margin:0px;
+      top:0;
+      left:0;
+        color:#222C3C;
+       position: fixed;
+      width: 100%;
+      z-index: 1000;
+      display:inline;
+      font-family: 'Open Sans', sans-serif;
+      text-align:left;
+                color:#fff9f0;
+
+        }
+
+    .header a{
+        text-decoration: none;
+        color:#222c3c;
+          display:inline-flex;
+          margin-top: 40px;
+          margin-left: 40px;
+          margin-right: -10px;
+          font-family: 'Open Sans', sans-serif;
+             color:#fff9f0;
+
+
+      }
+
+      .header a:hover{
+        text-decoration-line: underline;
+        text-decoration-thickness: 2px;
+
+      }
+
+    .header .name{
+      margin-left: 1250px;
+    margin-top: -115px;
+      font-size: 20px;
+        font-family: 'Open Sans', sans-serif;
+
+    }
+
+    .logo {
+      margin-top: -108px;
+      
+      display: grid;
+        place-items: center;
+        text-align: center;
+
+    }
+    .logo img{
+      width: 200px;
+      height:200px;
+      
+    }
+
+    body{
+    	margin-top: 140px;
+    }
+		button{
+			width:200px;
+			height:100px;
+			background-color:lightblue;
+			font-size:30px;
+			margin-left:43%;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class = "header">
+        
+        <a href="index.html#gallery" target="_blank">
+            <div class = "item">Back to Gallery</div>
+        </a>
+        <a href="inputinfo.html" target="_blank">
+            <div class = "item">Codesketch Tutorial</div>
+        </a>
+        
+    <div class= "logo"><img src = "logo.png"></div>
+    <div class= "name">Liv Sandberg</div>
+    </div>
+
+
+<button type="button" onClick="window.location.reload()">RELOAD PAGE</button>
+
+<script type = "text/javascript">
+	var color = prompt("Enter a background color for this page!")
+	document.getElementsByTagName("body")[0].style.backgroundColor = color;
+
+</script>
+</body>
+</html>

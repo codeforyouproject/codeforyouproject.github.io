@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Liv Sandberg</title>
+<style type="text/css">
+
+.header{
+
+      height:14.4vh;
+      background-color: #fff9f0;
+       margin:0px;
+      top:0;
+      left:0;
+        color:#6699cc;
+       position: fixed;
+      width: 100%;
+      z-index: 1000;
+      display:inline;
+      font-family: 'Open Sans', sans-serif;
+      text-align:left;
+        }
+
+    .header a{
+        text-decoration: none;
+        color:#6699cc;
+          display:inline-flex;
+          margin-top: 5.7vh;
+          margin-left: 2.7vw;
+          margin-right: -2.7;
+          font-family: 'Open Sans', sans-serif;
+
+
+
+      }
+
+      .header a:hover{
+        text-decoration-line: underline;
+        text-decoration-thickness: 2px;
+
+      }
+
+    .header .name{
+      margin-left: 86.8vw;
+    margin-top: -16.64vh;
+      font-size: 1.25em;
+        font-family: 'Open Sans', sans-serif;
+
+    }
+
+    .logo {
+      margin-top: -15.6vh;
+      
+      display: grid;
+        place-items: center;
+        text-align: center;
+
+    }
+    .logo img{
+      width: 13.9vw;
+      height:28.9vh;
+      
+    }
+body{
+  text-align: center;
+  background-size: 100%;
+    background-color: #6699cc;
+  margin-top: 140px;
+      font-family: 'Open Sans', sans-serif;
+
+      overflow-x: hidden;
+}
+
+.information{
+  width:48.67vw;
+  height:40.6vh;
+  margin-top: 2.89vh;
+  margin-bottom: 5.7vh;  
+  margin-left: 1.4vw;
+  background-color: #FF86C8;
+  color:#fff9f0;
+
+}
+
+.information p{
+  margin-left:2.4vw;
+
+  line-height: 5.7vh;
+  width:90%;
+  font-size: 1.1250em ;
+  padding-top: 5.06vh;
+
+}
+
+   .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: white;
+   /* background-color: rgb(0,0,0);*/
+    /*background-color: rgba(0,0,0, 0.9);*/
+    overflow-x: hidden;
+    transition: 0.5s;
+
+}
+.over{
+  height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  background-color: rgba(0,0,0, 0);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+
+
+
+.row{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  background-color: #6699cc;
+   margin-top: -46.3vh;
+   margin-left: 58.4vw;
+   color:#6699cc;
+}
+.column {
+  width: 31.3vw;
+ 
+
+  height: 40.5vh; /* Should be removed. Only for demonstration */
+  background-color: black;
+  /*margin-left: 10px;*/
+/*  border-radius: 20px;
+*/  border:none;
+  margin-bottom: 2.9vh;
+
+}
+.column p{
+  margin-top: 25%;
+}
+
+.answer {
+  float: left;
+  width: 25%;
+  padding: 1.4vh;
+  height: 2.9vh; /* Should be removed. Only for demonstration */
+  background-color: black;
+/*  margin-left: 70px;
+*/  margin-top: 1.4vh;
+  border-radius: 10px;
+  border:none;
+}
+#ans1, #ans1Over{
+  background-color: #fcd9e1;
+
+
+}
+#col1{
+
+  background-color: #fff9f0;
+
+
+}
+#col2{
+  background-repeat: no-repeat; 
+  /*argin-left:35px ;
+*/
+background-color: #6699cc;
+
+margin-left: 2vw;
+}
+
+
+/*#ans1Over{
+  opacity: 50%;
+}*/
+#col1:hover, #ans1:hover{
+    box-shadow:10px 5px 5px lightpink;
+    cursor: grab;
+    
+}
+#col2, #ans2,#ans2Over{
+  background-color: #6699cc;
+  
+}
+
+
+#col3, #ans3,#ans3Over{
+  background-color: #fff9f0;
+  
+}
+
+#col3:hover,#ans3:hover{
+    box-shadow:10px 5px 5px lightgreen;
+    cursor: grab;
+}
+/* Clear floats after the columns */
+
+
+.answer {
+  float: left;
+  width: 25%;
+  padding: 1.4vh;
+  height: 2.9vhpx; /* Should be removed. Only for demonstration */
+  background-color: black;
+  margin-left: v.8vw;
+  margin-top: 1.4vh;
+  margin-right: -1.4vw;
+  border-radius: 10px;
+  border:none;
+
+}
+  .codepen{
+    display:hidden;
+  }
+
+
+
+.container{
+        width: 13.9vw;
+        height: 28.9vh;
+        position: relative;
+        margin: 2.9vh;
+    }
+
+   
+      .back1 {
+         background-image: url("inputJS.png");
+           background-size: 100%;
+           background-repeat: no-repeat;
+          color:rgba(0,0,0,0);
+      }
+
+  
+
+
+</style>
+
+  
+</head>
+<body>
+
+<div class = "header">
+        
+        <a href="index.html#gallery" target="_blank">
+            <div class = "item">Back to Gallery</div>
+        </a>
+        <a href="hover.html" target="_blank">
+            <div class = "item">Original Codesketch</div>
+        </a>
+        
+    <div class= "logo"><img src = "logo.png"></div>
+    <div class= "name">Liv Sandberg</div>
+    </div>
+
+
+
+
+<div class = "information">
+
+    <p>This is a built-in Javascript prompt function which prompts the user to input something, in this case, a color. When a color is inputted, the background color changes. HTML has predefined built-in colors which it will pull from for this task, so more obscure colors will not work. Below you can find a tutorial with step by step instructions for how to create this code.</p>
+
+</div>
+
+    <div class="row">
+
+      <div class="column" id = "col1" onClick="toggle1()"><p>CLICK TO REVEAL JAVASCRIPT SOLUTION!</p></div>
+
+
+      <div class="column" id = "col2"><p></p></div>
+
+    </div>
+<p class="codepen" id = "pen" data-height="400"  data-theme-id="default" data-default-tab="js,result" data-user="c24ls" data-slug-hash="KKboRvm" data-editable = "true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em; " data-pen-title="Smiley Faces">
+  <span>See the Pen <a href="https://codepen.io/c24ls/pen/KKboRvm">
+  Walkers - How to</a> by Louis Hoebregts (<a href="https://codepen.io/c24ls">@c24ls</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  <div id = "buffer"></div>
+
+ <div id="nav" class="over" onclick ="closeAns1(), closeAns2(), closeAns3()"></div>
+    
+        <div id="ans1Over" class="overlay"></div>
+        <div id="ans2Over" class="overlay"></div>
+        <div id="ans3Over" class="overlay"></div>
+   
+
+  
+  <div id = "buffer"></div>
+
+
+
+
+
+  
+</div>
+<script type="text/javascript">
+  function toggle1() {
+         let divElement = document.getElementById('col1');
+         let allClass = divElement.classList;
+         
+         if (allClass.contains("back1")) {
+            divElement.classList.remove("back1");
+            divElement.style.backgroundColor = "#fff9f0";
+
+         } 
+         else {
+            divElement.classList.add("back1");
+            divElement.style.backgroundColor = "#1d1e22";
+
+         }
+      }
+
+
+</script>
+</body>
+
+
+
+   
+      
