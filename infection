@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infection Spread Simulation</title>
+<style>
+  html {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;height: 100vh;
+  margin: 0;
+  background-color: #282c34;
+  color: white;
+  font-family: 'Arial', sans-serif; 
+}
+#simulationCanvas {
+  border: 3px solid white;
+  border-radius: 10px;
+  width:900px;
+} 
+
+#restartButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: white;
+  background: #ff4b2b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#timer, #timeTaken {
+  position: absolute;
+  left: 20px;
+  font-size: 1.2em;}
+#timer {top: 20px; 
+}  
+#timeTaken {top: 20px; 
+  } 
+
+</style>
+</head>
+<body>
+
+<canvas id = "simulationCanvas"></canvas>
+  <button id="restartButton">Restart</button>
+    <p id="timer">0</p>
+  <div id = "timerBox">
+
+    <p id="timeTaken"></p>
+  </div>
+  <script src="script.js"></script>
+
+<script>
+const canvas = document.getElementById('simulationCanvas');
+const ctx = canvas.getContext('2d');
+const restartButton = document.getElementById('restartButton');
+const timeTakenElement = document.getElementById('timeTaken');
+const timerElement = document.getElementById('timer');  canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+let startTime = null; 
+let endTime = null;
+let timerInterval = null;
+class Dot {
+  constructor(x, y, status, speedX, speedY) {
+    this.x = x;
+    this.y = y;
+    this.status = status;
+    this.speedX = speedX; // Passed speedX as argument
+    this.speedY = speedY; // Passed speedY as argument
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
+    ctx.fillStyle = this.status === 'healthy' ? 'green' : 'red';
+    ctx.fill();
+  }
+  update(dots) {
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+    if (this.status === 'infected') {
+      dots.forEach(dot => {
+        const dist = Math.hypot(dot.x - this.x, dot.y - this.y);
+        if (dist < 20 && dot.status === 'healthy') {
+          dot.status = 'infected';
+          if(!startTime) {
+            startTime = Date.now();
+            startTimer();
+          }
+        }
+      });
+    }
+    this.draw();
+  } }
+let dots = [];
+  function initializeDots() {
+    dots = [];
+    for (let i = 0; i < 100; i++) {
+      // Initialize speed only once outside the Dot constructor
+      const speedX = Math.random() * 4 - 2;
+      const speedY = Math.random() * 4 - 2;
+      dots.push(new Dot(
+        Math.random() * canvas.width,
+        Math.random() * canvas.height,
+        i === 0 ? 'infected' : 'healthy',
+        speedX,
+        speedY
+      ));
+    }
+  }
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  dots.forEach(dot => dot.update(dots));
+  if(dots.every(dot => dot.status === 'infected')) {
+    if(!endTime) {
+      stopTimer();
+
+      endTime = Date.now();
+      const timeTaken = ((endTime - startTime) / 1000).toFixed(3);
+      timeTakenElement.textContent = `Time taken for all to be infected: ${timeTaken} seconds`;
+      
+      timerElement.style.display = 'none';
+    }
+  }
+  else {
+    requestAnimationFrame(animate);
+  } }
+function startTimer() {
+  timerInterval = setInterval(() => {
+    const seconds =((Date.now() - startTime) / 1000).toFixed(3);
+    timerElement.textContent = `Time elapsed: ${seconds} seconds`;}, 1); }
+function stopTimer() {
+  clearInterval(timerInterval); }
+initializeDots(); animate();
+
+
+restartButton.addEventListener('click', () => {
+  startTime = null;
+  endTime = null;
+  stopTimer();
+  timerElement.style.display = 'block';
+  timerElement.textContent = 'Time elapsed: 0 seconds';
+  timeTakenElement.textContent = '';
+  initializeDots();
+  animate(); }); 
+
+
+
+
+</script>
+
+</body>
+</html>
